@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bake N Make Baking Academy by H.A.F | Hyderabad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'chocolate': {
+              50: '#fdf8f3',
+              100: '#f9ebd8',
+              200: '#f2d2ac',
+              300: '#e8b378',
+              400: '#dd8d47',
+              500: '#d0702a',
+              600: '#b85621',
+              700: '#97401e',
+              800: '#7b3420',
+              900: '#662d1f',
+              950: '#3a150e',
+            },
+            'blush': {
+              50: '#fff5f7',
+              100: '#ffe0e6',
+              200: '#ffc2d1',
+              300: '#ff93ad',
+              400: '#ff5f8a',
+              500: '#ff3370',
+              600: '#e61455',
+              700: '#c40544',
+              800: '#a5083f',
+              900: '#8d0d3c',
+              950: '#57001f',
+            },
+            'vanilla': {
+              50: '#fefdfb',
+              100: '#fdf6e8',
+              200: '#fceabb',
+              300: '#f9d97b',
+              400: '#f5c33e',
+              500: '#e5a900',
+              600: '#c28500',
+              700: '#9f6600',
+              800: '#835200',
+              900: '#6d4400',
+              950: '#3d2400',
+            },
+            'cream': '#FFF8F0',
+            'warm-white': '#FFFAF5',
+            'rose': '#F4E1D9',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Poppins', 'sans-serif'],
+            'script': ['Dancing Script', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="toast fixed top-24 right-6 z-[200] bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-chocolate-100 max-w-sm">
+    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+      <i data-lucide="check" class="w-5 h-5 text-green-600"></i>
+    </div>
+    <p id="toast-message" class="text-chocolate-900 text-sm font-medium"></p>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918087897906?text=Hi!%20I'm%20interested%20in%20baking%20classes" target="_blank"
+    class="whatsapp-float fixed bottom-6 right-6 z-[100] w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all hover:scale-110 duration-300 group">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span
+      class="absolute -top-2 -left-2 w-5 h-5 bg-red-500 rounded-full text-white text-xs flex items-center justify-center font-bold animate-pulse">1</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="nav-glass fixed top-0 left-0 right-0 z-[150] transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#home" class="flex items-center gap-2 group">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-chocolate-400 to-chocolate-700 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <span class="text-white font-display font-bold text-lg md:text-xl">B</span>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-display font-bold text-chocolate-800 text-sm md:text-base leading-tight tracking-wide">Bake N
+              Make</span>
+            <span class="text-[10px] md:text-xs text-chocolate-500 font-medium tracking-widest uppercase">by
+              H.A.F</span>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="#home"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">Home</a>
+          <a href="#about"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">About</a>
+          <a href="#courses"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">Courses</a>
+          <a href="#gallery"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">Gallery</a>
+          <a href="#testimonials"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">Reviews</a>
+          <a href="#contact"
+            class="nav-link px-4 py-2 text-sm font-medium text-chocolate-700 hover:text-chocolate-500 rounded-full hover:bg-chocolate-50 transition-all">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="#courses"
+            class="hidden md:inline-flex btn-shine items-center gap-2 bg-gradient-to-r from-chocolate-600 to-chocolate-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-chocolate-300/50 transition-all duration-300 hover:scale-105">
+            Enroll Now
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <button id="menu-toggle"
+            class="lg:hidden w-10 h-10 rounded-xl bg-chocolate-50 flex items-center justify-center text-chocolate-800 hover:bg-chocolate-100 transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[160] bg-warm-white">
+    <div class="flex items-center justify-between p-4">
+      <div class="flex items-center gap-2">
+        <div
+          class="w-10 h-10 rounded-full bg-gradient-to-br from-chocolate-400 to-chocolate-700 flex items-center justify-center shadow-md">
+          <span class="text-white font-display font-bold text-lg">B</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-chocolate-800 text-sm leading-tight">Bake N Make</span>
+          <span class="text-[10px] text-chocolate-500 font-medium tracking-widest uppercase">by H.A.F</span>
+        </div>
+      </div>
+      <button id="menu-close"
+        class="w-10 h-10 rounded-xl bg-chocolate-50 flex items-center justify-center text-chocolate-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center h-[calc(100%-80px)] gap-2">
+      <a href="#home"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">Home</a>
+      <a href="#about"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">About</a>
+      <a href="#courses"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">Courses</a>
+      <a href="#gallery"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">Gallery</a>
+      <a href="#testimonials"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">Reviews</a>
+      <a href="#contact"
+        class="mobile-nav-link text-2xl font-display text-chocolate-800 hover:text-chocolate-500 py-3 transition-colors">Contact</a>
+      <a href="#courses"
+        class="mt-6 btn-shine bg-gradient-to-r from-chocolate-600 to-chocolate-700 text-white px-8 py-3 rounded-full text-lg font-semibold hover:shadow-lg transition-all">Enroll
+        Now</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-blush-100/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-vanilla-100/40 rounded-full blur-3xl"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-chocolate-100/20 rounded-full blur-3xl">
+      </div>
+    </div>
+    <div class="absolute top-32 right-[15%] text-4xl md:text-5xl float-animation opacity-60 pointer-events-none">🧁
+    </div>
+    <div class="absolute top-48 left-[8%] text-3xl md:text-4xl float-animation-reverse opacity-50 pointer-events-none"
+      style="animation-delay: 1s;">🍰</div>
+    <div class="absolute bottom-32 left-[20%] text-3xl md:text-4xl float-animation opacity-50 pointer-events-none"
+      style="animation-delay: 2s;">🥐</div>
+    <div class="absolute bottom-48 right-[10%] text-4xl float-animation-reverse opacity-60 pointer-events-none"
+      style="animation-delay: 0.5s;">🎂</div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 md:py-12">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="order-2 lg:order-1 text-center lg:text-left">
+          <div
+            class="inline-flex items-center gap-2 bg-blush-50 border border-blush-200 rounded-full px-4 py-1.5 mb-6 animate-on-scroll">
+            <span class="text-xl">🧁</span>
+            <span class="text-sm font-medium text-chocolate-600">Hyderabad's Premier Baking Academy</span>
+          </div>
+
+          <h1
+            class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-chocolate-900 leading-[1.1] mb-6 animate-on-scroll">
+            Where Every
+            <span class="relative inline-block">
+              <span class="gradient-text">Crumb</span>
+              <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                <path d="M2 8.5C30 2 70 2 100 6C130 10 170 4 198 8" stroke="#dd8d47" stroke-width="3"
+                  stroke-linecap="round" />
+              </svg>
+            </span>
+            <br>Tells a <span class="font-script text-chocolate-500">Story</span>
+          </h1>
+
+          <p
+            class="text-chocolate-600 text-base md:text-lg max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed animate-on-scroll">
+            Learn the art of baking from scratch. From artisan breads to exquisite pastries, master the craft with
+            hands-on training at Bake N Make Baking Academy.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10 animate-on-scroll">
+            <a href="#courses"
+              class="w-full sm:w-auto btn-shine inline-flex items-center justify-center gap-2 bg-gradient-to-r from-chocolate-600 to-chocolate-700 text-white px-8 py-4 rounded-full font-semibold text-base hover:shadow-xl hover:shadow-chocolate-300/30 transition-all duration-300 hover:scale-105">
+              Explore Courses
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="#gallery"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border-2 border-chocolate-200 text-chocolate-700 px-8 py-4 rounded-full font-semibold text-base hover:border-chocolate-400 hover:bg-chocolate-50 transition-all duration-300">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              View Gallery
+            </a>
+          </div>
+
+          <div class="flex items-center gap-6 justify-center lg:justify-start animate-on-scroll">
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-chocolate-800 counter-value" data-target="500">0</div>
+              <div class="text-xs text-chocolate-500 mt-1">Students Trained</div>
+            </div>
+            <div class="w-px h-10 bg-chocolate-200"></div>
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-chocolate-800 counter-value" data-target="50">0</div>
+              <div class="text-xs text-chocolate-500 mt-1">Course Options</div>
+            </div>
+            <div class="w-px h-10 bg-chocolate-200"></div>
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-chocolate-800 counter-value" data-target="10">0</div>
+              <div class="text-xs text-chocolate-500 mt-1">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2 animate-on-scroll from-right">
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-gradient-to-br from-blush-200/60 via-vanilla-200/60 to-chocolate-200/60 rounded-3xl blur-2xl">
+            </div>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-chocolate-200/50">
+              <img src="http://static.photos/food/640x360/42" alt="Beautiful baked goods"
+                class="w-full h-[350px] sm:h-[450px] lg:h-[550px] object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-chocolate-950/30 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 flex items-center gap-3">
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-br from-blush-200 to-blush-300 flex items-center justify-center text-2xl">
+                    👩‍🍳</div>
+                  <div>
+                    <p class="font-display font-semibold text-chocolate-900 text-sm">Chef Hafsa</p>
+                    <p class="text-xs text-chocolate-500">Head Baker & Instructor</p>
+                  </div>
+                  <div class="ml-auto flex items-center gap-1 text-vanilla-500">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <span class="text-sm font-semibold text-chocolate-800">4.9</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee / Ribbon -->
+  <div class="bg-gradient-to-r from-chocolate-700 via-chocolate-600 to-chocolate-700 py-3 overflow-hidden">
+    <div class="marquee-track">
+      <div class="flex items-center gap-8 px-4 whitespace-nowrap text-white/90 text-sm font-medium">
+        <span class="flex items-center gap-2">🎂 Custom Cakes</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🧁 Cupcake Art</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍞 Artisan Breads</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍰 Wedding Cakes</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🥐 French Pastries</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍩 Donuts & More</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍪 Cookie Decorating</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🧁 Chocolate Making</span>
+        <span class="text-vanilla-300">✦</span>
+      </div>
+      <div class="flex items-center gap-8 px-4 whitespace-nowrap text-white/90 text-sm font-medium">
+        <span class="flex items-center gap-2">🎂 Custom Cakes</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🧁 Cupcake Art</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍞 Artisan Breads</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍰 Wedding Cakes</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🥐 French Pastries</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍩 Donuts & More</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🍪 Cookie Decorating</span>
+        <span class="text-vanilla-300">✦</span>
+        <span class="flex items-center gap-2">🧁 Chocolate Making</span>
+        <span class="text-vanilla-300">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 md:py-28 relative overflow-hidden">
+    <div
+      class="absolute top-0 right-0 w-64 h-64 bg-blush-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="animate-on-scroll from-left">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-vanilla-200/50 to-blush-200/50 rounded-3xl blur-2xl">
+            </div>
+            <div class="relative grid grid-cols-2 gap-4">
+              <div class="space-y-4">
+                <div class="rounded-2xl overflow-hidden shadow-lg img-zoom">
+                  <img src="http://static.photos/food/320x240/10" alt="Baking class" class="w-full h-48 object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg img-zoom">
+                  <img src="http://static.photos/food/320x240/22" alt="Cakes" class="w-full h-64 object-cover">
+                </div>
+              </div>
+              <div class="space-y-4 mt-8">
+                <div class="rounded-2xl overflow-hidden shadow-lg img-zoom">
+                  <img src="http://static.photos/food/320x240/35" alt="Pastries" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg img-zoom">
+                  <img src="http://static.photos/food/320x240/48" alt="Decorating" class="w-full h-48 object-cover">
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 z-10">
+              <div
+                class="w-14 h-14 rounded-full bg-gradient-to-br from-vanilla-200 to-chocolate-200 flex items-center justify-center text-3xl">
+                🏆</div>
+              <div>
+                <p class="font-display font-bold text-chocolate-900 text-lg">10+ Years</p>
+                <p class="text-xs text-chocolate-500">Excellence in Baking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll from-right">
+          <div
+            class="inline-flex items-center gap-2 bg-vanilla-50 border border-vanilla-200 rounded-full px-4 py-1.5 mb-4">
+            <span class="text-lg">🍞</span>
+            <span class="text-sm font-medium text-chocolate-600">Our Story</span>
+          </div>
+
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate-900 leading-tight mb-6">
+            Baking Dreams Into <span class="font-script text-chocolate-500">Reality</span>
+          </h2>
+
+          <div class="section-divider mb-6"></div>
+
+          <p class="text-chocolate-600 leading-relaxed mb-6">
+            Welcome to <strong class="text-chocolate-800">Bake N Make Baking Academy by H.A.F</strong> — Hyderabad's
+            beloved destination for learning the art and science of baking. Founded with a passion for creating
+            beautiful, delicious baked goods, our academy has been transforming beginners into confident bakers for over
+            a decade.
+          </p>
+          <p class="text-chocolate-600 leading-relaxed mb-8">
+            Whether you want to bake the perfect loaf of bread, create show-stopping celebration cakes, or master the
+            art of French pastries, our expert instructors guide you through every whisk, fold, and frosting technique
+            with patience and care.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blush-50 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="award" class="w-5 h-5 text-blush-500"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-chocolate-800 text-sm">Certified Courses</p>
+                <p class="text-xs text-chocolate-500">Recognized certifications</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-vanilla-50 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="users" class="w-5 h-5 text-vanilla-600"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-chocolate-800 text-sm">Small Batches</p>
+                <p class="text-xs text-chocolate-500">Personal attention</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-chocolate-50 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="beaker" class="w-5 h-5 text-chocolate-500"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-chocolate-800 text-sm">Hands-on Training</p>
+                <p class="text-xs text-chocolate-500">100% practical approach</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blush-50 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="package" class="w-5 h-5 text-blush-500"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-chocolate-800 text-sm">Take Home Treats</p>
+                <p class="text-xs text-chocolate-500">Everything you bake is yours</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#courses"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-chocolate-600 to-chocolate-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+            Start Your Baking Journey
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="py-20 md:py-28 bg-chocolate-50/50 relative overflow-hidden">
+    <div class="absolute inset-0 dots-pattern opacity-[0.03] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-12 md:mb-16 animate-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-white border border-chocolate-100 rounded-full px-4 py-1.5 mb-4">
+          <span class="text-lg">📖</span>
+          <span class="text-sm font-medium text-chocolate-600">Our Courses</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate-900 mb-4">
+          Choose Your <span class="font-script text-chocolate-500">Sweet</span> Path
+        </h2>
+        <div class="section-divider mx-auto mb-6"></div>
+        <p class="text-chocolate-600 max-w-2xl mx-auto">
+          From beginner-friendly basics to advanced masterclasses, we have the perfect course for every baking
+          enthusiast.
+        </p>
+      </div>
+
+      <!-- Course Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 animate-on-scroll">
+        <button class="course-filter-btn active px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="all">All Courses</button>
+        <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="beginner">Beginner</button>
+        <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="intermediate">Intermediate</button>
+        <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="advanced">Advanced</button>
+        <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="workshop">Workshops</button>
+      </div>
+
+      <!-- Courses Grid -->
+      <div id="courses-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="beginner">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/15" alt="Beginner Baking" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span class="course-badge text-white text-xs font-bold px-3 py-1 rounded-full">Beginner</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">4.9</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">3 Days</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Beginner</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">Baking Basics 101</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">Perfect start for beginners. Learn essential
+              baking techniques, measurement mastery, and simple recipes.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹5,000</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹3,499</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="beginner">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/33" alt="Cupcakes" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span class="course-badge text-white text-xs font-bold px-3 py-1 rounded-full">Beginner</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">4.8</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">2 Days</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Beginner</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">Cupcake Artistry</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">Master the art of baking and decorating stunning
+              cupcakes with buttercream, fondant, and more.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹4,500</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹2,999</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="intermediate">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/27" alt="Cake Decorating" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span class="course-badge text-white text-xs font-bold px-3 py-1 rounded-full">Intermediate</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">5.0</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">5 Days</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Intermediate</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">Cake Decorating Master</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">Level up with advanced frosting, piping, fondant
+              work, and tiered cake construction techniques.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹8,000</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹5,999</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="advanced">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/40" alt="Wedding Cakes" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span
+                class="bg-gradient-to-r from-blush-500 to-blush-600 text-white text-xs font-bold px-3 py-1 rounded-full">Advanced</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">5.0</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">7 Days</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Advanced</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">Wedding Cake Design</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">Create breathtaking multi-tier wedding cakes with
+              sugar flowers, draping, and structural engineering.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹15,000</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹11,999</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="workshop">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/55" alt="Bread Workshop" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span
+                class="bg-gradient-to-r from-vanilla-500 to-vanilla-600 text-white text-xs font-bold px-3 py-1 rounded-full">Workshop</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">4.7</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">1 Day</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Workshop</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">Artisan Bread Workshop</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">One-day intensive workshop on sourdough,
+              focaccia, ciabatta, and other artisan bread techniques.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹3,500</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹1,999</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="course-card card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-chocolate-100/50 animate-on-scroll"
+          data-category="intermediate">
+          <div class="relative img-zoom">
+            <img src="http://static.photos/food/640x360/60" alt="French Pastries" class="w-full h-52 object-cover">
+            <div class="absolute top-4 left-4">
+              <span class="course-badge text-white text-xs font-bold px-3 py-1 rounded-full">Intermediate</span>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full p-2">
+              <i data-lucide="heart"
+                class="w-4 h-4 text-blush-500 wishlist-btn cursor-pointer hover:fill-current transition-all"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="flex items-center gap-1 text-vanilla-500">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs font-semibold text-chocolate-800">4.9</span>
+              </div>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">4 Days</span>
+              <span class="text-xs text-chocolate-400">•</span>
+              <span class="text-xs text-chocolate-500">Intermediate</span>
+            </div>
+            <h3 class="font-display font-bold text-chocolate-900 text-lg mb-2">French Pâtisserie</h3>
+            <p class="text-chocolate-500 text-sm mb-4 leading-relaxed">Master croissants, macarons, éclairs, tarts &
+              more with authentic French techniques and recipes.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs text-chocolate-400 line-through">₹7,000</span>
+                <span class="text-lg font-bold text-chocolate-800 ml-1">₹4,999</span>
+              </div>
+              <button
+                class="enroll-btn inline-flex items-center gap-1 bg-chocolate-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-chocolate-700 transition-all hover:scale-105">
+                Enroll
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 md:mb-16 animate-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-blush-50 border border-blush-200 rounded-full px-4 py-1.5 mb-4">
+          <span class="text-lg">📸</span>
+          <span class="text-sm font-medium text-chocolate-600">Our Creations</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate-900 mb-4">
+          A Feast for the <span class="font-script text-chocolate-500">Eyes</span>
+        </h2>
+        <div class="section-divider mx-auto mb-6"></div>
+        <p class="text-chocolate-600 max-w-2xl mx-auto">
+          Every creation tells a story. Browse our collection of Student and Instructor masterpieces.
+        </p>
+      </div>
+
+      <!-- Gallery Filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 animate-on-scroll">
+        <button class="gallery-filter-btn active px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="all">All</button>
+        <button class="gallery-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="cakes">Cakes</button>
+        <button class="gallery-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="pastries">Pastries</button>
+        <button class="gallery-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="breads">Breads</button>
+        <button class="gallery-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all"
+          data-filter="decorated">Decorated</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="cakes" data-title="Elegant Rose Cake"
+          data-description="Handcrafted sugar flowers on a triple-layered vanilla cake">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/10" alt="Cake" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Elegant Rose Cake</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="pastries" data-title="French Macarons"
+          data-description="Delicate almond macarons with various fillings">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/22" alt="Macarons" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">French Macarons</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="breads" data-title="Sourdough Loaf"
+          data-description="Perfectly scored artisan sourdough with crispy crust">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/35" alt="Bread" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Sourdough Loaf</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="decorated" data-title="Fondant Fantasy"
+          data-description="Whimsical fondant creation with hand-painted details">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/48" alt="Decorated" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Fondant Fantasy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="cakes" data-title="Chocolate Dream"
+          data-description="Triple chocolate layered cake with ganache drips">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/55" alt="Chocolate Cake"
+              class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Chocolate Dream</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="pastries" data-title="Almond Croissants"
+          data-description="Buttery, flaky croissants filled with almond cream">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/60" alt="Croissants" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Almond Croissants</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="breads" data-title="Focaccia Art"
+          data-description="Herb-decorated focaccia with olive oil and sea salt">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/70" alt="Focaccia" class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Focaccia Art</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden img-zoom cursor-pointer animate-on-scroll"
+          data-category="decorated" data-title="Sugar Flowers"
+          data-description="Exquisite hand-crafted sugar flower arrangement">
+          <div class="relative group">
+            <img src="http://static.photos/food/320x240/80" alt="Sugar Flowers"
+              class="w-full h-48 md:h-56 object-cover">
+            <div
+              class="absolute inset-0 bg-chocolate-950/0 group-hover:bg-chocolate-950/60 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-center p-3">
+                <i data-lucide="maximize-2" class="w-6 h-6 text-white mx-auto mb-2"></i>
+                <p class="text-white font-display font-semibold text-sm">Sugar Flowers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox"
+    class="fixed inset-0 z-[300] bg-chocolate-950/90 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <button id="lightbox-close"
+      class="absolute top-6 right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div
+      class="max-w-3xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300"
+      id="lightbox-content">
+      <img id="lightbox-img" src="" alt="" class="w-full h-64 sm:h-80 md:h-96 object-cover">
+      <div class="p-6">
+        <h3 id="lightbox-title" class="font-display font-bold text-chocolate-900 text-xl mb-2"></h3>
+        <p id="lightbox-desc" class="text-chocolate-600 text-sm"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials"
+    class="py-20 md:py-28 bg-gradient-to-br from-blush-50 via-cream to-vanilla-50 relative overflow-hidden">
+    <div class="absolute inset-0 dots-pattern opacity-[0.02] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-12 md:mb-16 animate-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-white border border-blush-200 rounded-full px-4 py-1.5 mb-4">
+          <span class="text-lg">💖</span>
+          <span class="text-sm font-medium text-chocolate-600">Student Love</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate-900 mb-4">
+          What Our <span class="font-script text-chocolate-500">Bakers</span> Say
+        </h2>
+        <div class="section-divider mx-auto mb-6"></div>
+      </div>
+
+      <!-- Testimonials Carousel -->
+      <div class="relative">
+        <div id="testimonials-track" class="overflow-hidden">
+          <div class="flex transition-transform duration-500 ease-in-out" id="testimonials-slider">
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+              <div class="testimonial-card rounded-2xl p-6 md:p-8 border border-blush-100/50 h-full">
+                <div class="flex items-center gap-1 mb-4 text-vanilla-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-chocolate-700 text-sm leading-relaxed mb-6">"Bake N Make completely transformed my baking
+                  skills! I joined as a complete beginner and now I'm taking custom cake orders. Chef Hafsa is the most
+                  patient and talented instructor I've ever met."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="http://static.photos/people/200x200/10" alt="Student" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <p class="font-semibold text-chocolate-900 text-sm">Priya Sharma</p>
+                    <p class="text-xs text-chocolate-500">Home Baker, Hyderabad</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+              <div class="testimonial-card rounded-2xl p-6 md:p-8 border border-blush-100/50 h-full">
+                <div class="flex items-center gap-1 mb-4 text-vanilla-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-chocolate-700 text-sm leading-relaxed mb-6">"The French Pâtisserie course was a
+                  game-changer! I learned to make perfect croissants and macarons. The small batch size means you get
+                  personal attention. Worth every rupee!"</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="http://static.photos/people/200x200/25" alt="Student" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <p class="font-semibold text-chocolate-900 text-sm">Anjali Reddy</p>
+                    <p class="text-xs text-chocolate-500">Pastry Enthusiast</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+              <div class="testimonial-card rounded-2xl p-6 md:p-8 border border-blush-100/50 h-full">
+                <div class="flex items-center gap-1 mb-4 text-vanilla-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-chocolate-700 text-sm leading-relaxed mb-6">"I took the Wedding Cake Design course and
+                  within 3 months, I started my own cake business! The academy gave me skills, confidence, and even
+                  business guidance. Forever grateful! 💕"</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="http://static.photos/people/200x200/40" alt="Student" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <p class="font-semibold text-chocolate-900 text-sm">Sana Khan</p>
+                    <p class="text-xs text-chocolate-500">Cake Business Owner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+              <div class="testimonial-card rounded-2xl p-6 md:p-8 border border-blush-100/50 h-full">
+                <div class="flex items-center gap-1 mb-4 text-vanilla-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-chocolate-700 text-sm leading-relaxed mb-6">"Best decision I ever made! The Bread
+                  Workshop was so informative and hands-on. I now bake fresh sourdough every weekend for my family. Chef
+                  Hafsa makes everything so easy to learn."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="http://static.photos/people/200x200/55" alt="Student" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <p class="font-semibold text-chocolate-900 text-sm">Rahul Verma</p>
+                    <p class="text-xs text-chocolate-500">Home Baker</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <button id="test-prev"
+            class="w-10 h-10 rounded-full bg-white border border-chocolate-200 flex items-center justify-center text-chocolate-700 hover:bg-chocolate-50 transition-colors">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <div id="test-dots" class="flex items-center gap-2">
+            <span class="test-dot w-2.5 h-2.5 rounded-full bg-chocolate-400 transition-all cursor-pointer"></span>
+            <span class="test-dot w-2.5 h-2.5 rounded-full bg-chocolate-200 transition-all cursor-pointer"></span>
+            <span class="test-dot w-2.5 h-2.5 rounded-full bg-chocolate-200 transition-all cursor-pointer"></span>
+            <span class="test-dot w-2.5 h-2.5 rounded-full bg-chocolate-200 transition-all cursor-pointer"></span>
+          </div>
+          <button id="test-next"
+            class="w-10 h-10 rounded-full bg-white border border-chocolate-200 flex items-center justify-center text-chocolate-700 hover:bg-chocolate-50 transition-colors">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 md:py-28 relative overflow-hidden">
+    <div
+      class="absolute bottom-0 left-0 w-72 h-72 bg-blush-100/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 md:mb-16 animate-on-scroll">
+        <div
+          class="inline-flex items-center gap-2 bg-chocolate-50 border border-chocolate-100 rounded-full px-4 py-1.5 mb-4">
+          <span class="text-lg">📍</span>
+          <span class="text-sm font-medium text-chocolate-600">Get In Touch</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate-900 mb-4">
+          Let's Bake <span class="font-script text-chocolate-500">Together</span>
+        </h2>
+        <div class="section-divider mx-auto mb-6"></div>
+        <p class="text-chocolate-600 max-w-2xl mx-auto">
+          Ready to start your baking journey? Drop us a message or visit our academy in Hyderabad!
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-6 animate-on-scroll from-left">
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-chocolate-100/50 card-hover">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-chocolate-100 to-chocolate-200 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-chocolate-600"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold text-chocolate-900 mb-1">Visit Our Academy</h4>
+                <p class="text-chocolate-600 text-sm leading-relaxed">Bake N Make Baking Academy, Banjara Hills, Road
+                  No. 12, Hyderabad, Telangana 500034</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-chocolate-100/50 card-hover">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-vanilla-100 to-vanilla-200 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone" class="w-5 h-5 text-vanilla-700"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold text-chocolate-900 mb-1">Call or WhatsApp</h4>
+                <p class="text-chocolate-600 text-sm">+91 99999 99999</p>
+                <p class="text-chocolate-400 text-xs mt-1">Mon - Sat: 9:00 AM - 7:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-chocolate-100/50 card-hover">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-blush-50 to-blush-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="mail" class="w-5 h-5 text-blush-500"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold text-chocolate-900 mb-1">Email Us</h4>
+                <p class="text-chocolate-600 text-sm">hello@bakenmake.academy</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-md border border-chocolate-100/50 card-hover">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-chocolate-100 to-blush-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-5 h-5 text-chocolate-600"></i>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold text-chocolate-900 mb-1">Class Hours</h4>
+                <p class="text-chocolate-600 text-sm">Mon - Fri: 10 AM - 6 PM</p>
+                <p class="text-chocolate-600 text-sm">Weekend: 9 AM - 5 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white hover:scale-110 transition-transform"
+              title="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform"
+              title="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white hover:scale-110 transition-transform"
+              title="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white hover:scale-110 transition-transform"
+              title="WhatsApp">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3 animate-on-scroll from-right">
+          <form id="contact-form" class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-chocolate-100/50">
+            <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label class="block text-sm font-semibold text-chocolate-800 mb-2">Full Name *</label>
+                <input type="text" id="cf-name" placeholder="Your name" required
+                  class="w-full px-4 py-3 rounded-xl border border-chocolate-200 bg-chocolate-50/30 text-chocolate-900 placeholder-chocolate-300 focus:border-chocolate-400 focus:ring-2 focus:ring-chocolate-200 focus:outline-none transition-all text-sm">
+                <p class="error-msg text-xs text-red-500 mt-1 hidden"></p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-chocolate-800 mb-2">Phone *</label>
+                <input type="tel" id="cf-phone" placeholder="+91 99999 99999" required
+                  class="w-full px-4 py-3 rounded-xl border border-chocolate-200 bg-chocolate-50/30 text-chocolate-900 placeholder-chocolate-300 focus:border-chocolate-400 focus:ring-2 focus:ring-chocolate-200 focus:outline-none transition-all text-sm">
+                <p class="error-msg text-xs text-red-500 mt-1 hidden"></p>
+              </div>
+            </div>
+            <div class="mb-5">
+              <label class="block text-sm font-semibold text-chocolate-800 mb-2">Email *</label>
+              <input type="email" id="cf-email" placeholder="you@example.com" required
+                class="w-full px-4 py-3 rounded-xl border border-chocolate-200 bg-chocolate-50/30 text-chocolate-900 placeholder-chocolate-300 focus:border-chocolate-400 focus:ring-2 focus:ring-chocolate-200 focus:outline-none transition-all text-sm">
+              <p class="error-msg text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+            <div class="mb-5">
+              <label class="block text-sm font-semibold text-chocolate-800 mb-2">Interested In</label>
+              <select id="cf-course"
+                class="w-full px-4 py-3 rounded-xl border border-chocolate-200 bg-chocolate-50/30 text-chocolate-900 focus:border-chocolate-400 focus:ring-2 focus:ring-chocolate-200 focus:outline-none transition-all text-sm">
+                <option value="">Select a course</option>
+                <option value="Baking Basics 101">Baking Basics 101</option>
+                <option value="Cupcake Artistry">Cupcake Artistry</option>
+                <option value="Cake Decorating Master">Cake Decorating Master</option>
+                <option value="Wedding Cake Design">Wedding Cake Design</option>
+                <option value="Artisan Bread Workshop">Artisan Bread Workshop</option>
+                <option value="French Pâtisserie">French Pâtisserie</option>
+                <option value="Other">Other / Custom Request</option>
+              </select>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm font-semibold text-chocolate-800 mb-2">Your Message</label>
+              <textarea id="cf-message" rows="4" placeholder="Tell us about your baking goals..."
+                class="w-full px-4 py-3 rounded-xl border border-chocolate-200 bg-chocolate-50/30 text-chocolate-900 placeholder-chocolate-300 focus:border-chocolate-400 focus:ring-2 focus:ring-chocolate-200 focus:outline-none transition-all text-sm resize-none"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full btn-shine bg-gradient-to-r from-chocolate-600 to-chocolate-700 text-white py-4 rounded-xl font-semibold text-base hover:shadow-lg hover:shadow-chocolate-300/30 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Map Embed -->
+      <div class="mt-12 rounded-3xl overflow-hidden shadow-lg border border-chocolate-100 animate-on-scroll">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0!2d78.4454!3d17.4157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzU2LjUiTiA3OMKwMjYnNDMuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-chocolate-950 text-chocolate-100 pt-16 pb-8 relative overflow-hidden">
+    <div class="absolute inset-0 dots-pattern opacity-[0.03] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="lg:col-span-1">
+          <a href="#home" class="flex items-center gap-2 mb-4">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-chocolate-400 to-chocolate-600 flex items-center justify-center">
+              <span class="text-white font-display font-bold text-lg">B</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-white text-sm leading-tight">Bake N Make</span>
+              <span class="text-[10px] text-chocolate-400 font-medium tracking-widest uppercase">by H.A.F</span>
+            </div>
+          </a>
+          <p class="text-chocolate-400 text-sm leading-relaxed mb-6">Where every crumb tells a story. Hyderabad's
+            premier baking academy for aspiring bakers and pastry lovers.</p>
+          <div class="flex items-center gap-3">
+            <a href="#"
+              class="w-9 h-9 rounded-lg bg-chocolate-800 flex items-center justify-center text-chocolate-400 hover:bg-pink-600 hover:text-white transition-all">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-lg bg-chocolate-800 flex items-center justify-center text-chocolate-400 hover:bg-blue-600 hover:text-white transition-all">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-lg bg-chocolate-800 flex items-center justify-center text-chocolate-400 hover:bg-red-600 hover:text-white transition-all">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Home</a>
+            </li>
+            <li><a href="#about" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">About
+                Us</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Our
+                Courses</a></li>
+            <li><a href="#gallery"
+                class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Gallery</a></li>
+            <li><a href="#testimonials"
+                class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Reviews</a></li>
+            <li><a href="#contact"
+                class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white mb-4">Our Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Baking
+                Basics 101</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Cupcake
+                Artistry</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Cake
+                Decorating</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Wedding
+                Cakes</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">Bread
+                Workshop</a></li>
+            <li><a href="#courses" class="text-chocolate-400 hover:text-chocolate-200 text-sm transition-colors">French
+                Pâtisserie</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white mb-4">Contact Info</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-chocolate-500 mt-1 flex-shrink-0"></i>
+              <span class="text-chocolate-400 text-sm">Banjara Hills, Road No. 12, Hyderabad 500034</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-chocolate-500 flex-shrink-0"></i>
+              <span class="text-chocolate-400 text-sm">+91 99999 99999</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-chocolate-500 flex-shrink-0"></i>
+              <span class="text-chocolate-400 text-sm">hello@bakenmake.academy</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-chocolate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-chocolate-500 text-xs">&copy; 2024 Bake N Make Baking Academy by H.A.F. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-chocolate-500 hover:text-chocolate-300 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-chocolate-500 hover:text-chocolate-300 text-xs transition-colors">Terms of Service</a>
+          <a href="#" class="text-chocolate-500 hover:text-chocolate-300 text-xs transition-colors">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top"
+    class="fixed bottom-24 right-6 z-[90] w-12 h-12 bg-chocolate-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-chocolate-700 hover:scale-110">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
